@@ -172,6 +172,9 @@ class Visualizer:
         # plt.show()
         
     def extinction_vs_distance(self):
+        """
+        Plot true and network extinction along lines of sight.
+        """
         ells = self.ext_sight_datas['ells']
         distance = self.ext_sight_datas['distance']
         los_ext_true = self.ext_sight_datas['los_ext_true']
@@ -213,6 +216,9 @@ class Visualizer:
         plt.savefig(extinction_los_plot_path)
         
     def density_vs_distance(self):
+        """
+        Plot true and network density along lines of sight.
+        """
         ells = self.dens_sight_datas['ells']
         distance = self.dens_sight_datas['distance']
         los_dens_true = self.dens_sight_datas['los_dens_true']
