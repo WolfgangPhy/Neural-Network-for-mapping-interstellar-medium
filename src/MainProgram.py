@@ -98,7 +98,7 @@ class MainProgram:
         model_filename = FileHelper.give_config_value(self.config_file_path, "model_file")
         self.loader = ModelLoader(model_filename)
         self.loader.check_existing_model()
-        if self.loader.newmodel:
+        if self.loader.is_new_model:
             self.loader.create_new_model()
         else:
             self.loader.load_model()

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MainTrainer module &mdash; Neural Network for mapping interstellar medium  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ModelHelper module" href="ModelHelper.html" />
+    <link rel="prev" title="MainProgram module" href="MainProgram.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neural Network for mapping interstellar medium
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Neural Network for mapping interstellar medium</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CreateDataFile.html">CreateDataFile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomLossFunctions.html">CustomLossFunctions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dataset2D.html">Dataset2D module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionModel.html">ExtinctionModel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionNetwork.html">ExtinctionNetwork module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileHelper.html">FileHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainProgram.html">MainProgram module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MainTrainer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MainTrainer.MainTrainer"><code class="docutils literal notranslate"><span class="pre">MainTrainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.create_network"><code class="docutils literal notranslate"><span class="pre">MainTrainer.create_network()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.init_files_path"><code class="docutils literal notranslate"><span class="pre">MainTrainer.init_files_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.init_training"><code class="docutils literal notranslate"><span class="pre">MainTrainer.init_training()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.prepare_dataset"><code class="docutils literal notranslate"><span class="pre">MainTrainer.prepare_dataset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.run"><code class="docutils literal notranslate"><span class="pre">MainTrainer.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.setup_csv_files"><code class="docutils literal notranslate"><span class="pre">MainTrainer.setup_csv_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.setup_logfile"><code class="docutils literal notranslate"><span class="pre">MainTrainer.setup_logfile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MainTrainer.MainTrainer.train_network"><code class="docutils literal notranslate"><span class="pre">MainTrainer.train_network()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ModelHelper.html">ModelHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelLoader.html">ModelLoader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkHelper.html">NetworkHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkTrainer.html">NetworkTrainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParallelProcessor.html">ParallelProcessor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Visualizer.html">Visualizer module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neural Network for mapping interstellar medium</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Neural Network for mapping interstellar medium</a></li>
+      <li class="breadcrumb-item active">MainTrainer module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/MainTrainer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-MainTrainer">
+<span id="maintrainer-module"></span><h1>MainTrainer module<a class="headerlink" href="#module-MainTrainer" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MainTrainer.</span></span><span class="sig-name descname"><span class="pre">MainTrainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu_ext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu_dens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_loss_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_loss_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_reduction_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_reduction_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Main program for training a neural network for extinction and density estimation.</p>
+<dl>
+<dt># Remarks:</dt><dd><p>This class encapsulates the main workflow for training a neural network, including configuring,
+setting up log files, preparing the dataset, creating the network, initializing training, and executing
+training steps. The training process is orchestrated by the <cite>run</cite> method, which calls the other methods.</p>
+</dd>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>epoch_number (int)</cite>: Number of epochs for training the neural network.</p></li>
+<li><p><cite>nu_ext (float)</cite>: Lagrange multiplier for extinction loss calculation.</p></li>
+<li><p><cite>nu_dens (float)</cite>: Lagrange multiplier for density loss calculation.</p></li>
+<li><p><cite>ext_loss_function (callable)</cite>: Loss function for extinction estimation.</p></li>
+<li><p><cite>dens_loss_function (callable)</cite>: Loss function for density estimation.</p></li>
+<li><p><cite>ext_reduction_method (str)</cite>: Method for reducing the extinction loss.</p></li>
+<li><p><cite>dens_reduction_method (str)</cite>: Method for reducing the density loss.</p></li>
+<li><p><cite>learning_rate (float)</cite>: Learning rate for updating network parameters.</p></li>
+<li><p><cite>device (torch.device)</cite>: Computing device for running the neural network.</p></li>
+<li><p><cite>dataset (torch.Dataset)</cite>: Dataset containing training and validation samples.</p></li>
+<li><p><cite>network (ExtinctionNetwork)</cite>: Neural network model for extinction and density estimation.</p></li>
+<li><p><cite>opti (torch.optim.Adam)</cite>: Adam optimizer for updating network parameters.</p></li>
+<li><p><cite>hidden_size (int)</cite>: Size of the hidden layer in the neural network.</p></li>
+<li><p><cite>max_distance (float)</cite>: Maximum distance in the dataset.</p></li>
+<li><p><cite>config_file_path (str)</cite>: Path to the configuration file.</p></li>
+<li><p><cite>batch_size (int)</cite>: Size of the minibatches for training and validation.</p></li>
+</ul>
+</dd>
+<dt># Attributes:</dt><dd><ul class="simple">
+<li><p><cite>logfile (file)</cite>: Logfile for recording training progress and results.</p></li>
+<li><p><cite>dataset (torch.Dataset)</cite>: Dataset containing training and validation samples.</p></li>
+<li><p><cite>trainer (NetworkTrainer)</cite>: Trainer for the extinction neural network.</p></li>
+<li><p><cite>train_loader (torch.utils.data.DataLoader)</cite>: Dataloader for training minibatches.</p></li>
+<li><p><cite>val_loader (torch.utils.data.DataLoader)</cite>: Dataloader for validation minibatches.</p></li>
+<li><p><cite>network (ExtinctionNetwork)</cite>: Neural network model for extinction and density estimation.</p></li>
+<li><p><cite>opti (torch.optim.Adam)</cite>: Adam optimizer for updating network parameters.</p></li>
+<li><p><cite>epoch_number (int)</cite>: Number of epochs for training the neural network.</p></li>
+<li><p><cite>epoch (int)</cite>: Current epoch in the training process.</p></li>
+<li><p><cite>nu_ext (float)</cite>: Lagrange multiplier for extinction loss calculation.</p></li>
+<li><p><cite>nu_dens (float)</cite>: Lagrange multiplier for density loss calculation.</p></li>
+<li><p><cite>device (torch.device)</cite>: Computing device for running the neural network.</p></li>
+<li><p><cite>loss_ext_total (float)</cite>: Total loss for extinction estimation.</p></li>
+<li><p><cite>loss_dens_total (float)</cite>: Total loss for density estimation.</p></li>
+<li><p><cite>ext_loss_function (callable)</cite>: Loss function for extinction estimation.</p></li>
+<li><p><cite>dens_loss_function (callable)</cite>: Loss function for density estimation.</p></li>
+<li><p><cite>ext_reduction_method (str)</cite>: Method for reducing the extinction loss.</p></li>
+<li><p><cite>dens_reduction_method (str)</cite>: Method for reducing the density loss.</p></li>
+<li><p><cite>learning_rate (float)</cite>: Learning rate for updating network parameters.</p></li>
+<li><p><cite>hidden_size (int)</cite>: Size of the hidden layer in the neural network.</p></li>
+<li><p><cite>max_distance (float)</cite>: Maximum distance in the dataset.</p></li>
+<li><p><cite>config_file_path (str)</cite>: Path to the configuration file.</p></li>
+<li><p><cite>datafile_path (str)</cite>: Path to the dataset file.</p></li>
+<li><p><cite>outfile_path (str)</cite>: Path to the output file for storing trained models.</p></li>
+<li><p><cite>logfile_path (str)</cite>: Path to the logfile for recording training progress and results.</p></li>
+<li><p><cite>lossfile_path (str)</cite>: Path to the logfile for recording training loss values.</p></li>
+<li><p><cite>valfile_path (str)</cite>: Path to the logfile for recording validation loss values.</p></li>
+<li><p><cite>batch_size (int)</cite>: Size of the minibatches for training and validation.</p></li>
+<li><p><cite>val_ext_total (float)</cite>: Total loss for extinction estimation on the validation set.</p></li>
+<li><p><cite>val_dens_total (float)</cite>: Total loss for density estimation on the validation set.</p></li>
+</ul>
+</dd>
+<dt># Methods:</dt><dd><ul class="simple">
+<li><p><cite>init_files_path()</cite>: Initializes the path for the files used in the training process.</p></li>
+<li><p><cite>setup_logfile()</cite>: Sets up the logfile for recording training progress and results.</p></li>
+<li><p><cite>setup_csv_files()</cite>: Sets up CSV files for recording training and validation loss values.</p></li>
+<li><p><cite>prepare_dataset()</cite>: Loads and preprocesses the dataset for training and validation.</p></li>
+<li><p><cite>create_network()</cite>: Creates the neural network architecture based on the configuration.</p></li>
+<li><p><cite>init_training()</cite>: Initializes the training process, setting up epoch-related variables.</p></li>
+<li><p><cite>train_network()</cite>: Performs the training iterations, updating the neural network parameters.</p></li>
+<li><p><cite>run()</cite>: Executes the main program, orchestrating the entire training process.</p></li>
+</ul>
+</dd>
+<dt># Examples:</dt><dd><p>The following example shows how to train a neural network using the MainTrainer class.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">main_trainer</span> <span class="o">=</span> <span class="n">MainTrainer</span><span class="p">(</span><span class="n">epoch_number</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">nu_ext</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">nu_dens</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ext_loss_function</span><span class="o">=</span><span class="n">ext_loss_function</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                           <span class="n">dens_loss_function</span><span class="o">=</span><span class="n">dens_loss_function</span><span class="p">,</span> <span class="n">ext_reduction_method</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                           <span class="n">dens_reduction_method</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                           <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span> <span class="n">opti</span><span class="o">=</span><span class="n">opti</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                           <span class="n">max_distance</span><span class="o">=</span><span class="mf">20.</span><span class="p">,</span> <span class="n">config_file_path</span><span class="o">=</span><span class="s1">&#39;Config.json&#39;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">main_trainer</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.create_network">
+<span class="sig-name descname"><span class="pre">create_network</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.create_network" title="Link to this definition"></a></dt>
+<dd><p>Create the neural network.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This method initializes and configures the neural network for extinction and density estimation.
+The network is created with a hidden layer size determined by a formula based on the dataset size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.init_files_path">
+<span class="sig-name descname"><span class="pre">init_files_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.init_files_path" title="Link to this definition"></a></dt>
+<dd><p>Initialize the path for the files using the current test configuration file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.init_training">
+<span class="sig-name descname"><span class="pre">init_training</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.init_training" title="Link to this definition"></a></dt>
+<dd><p>Initialize the training process.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This method sets up the initial conditions for the training process.
+It initializes the training epoch and specifies Lagrange multipliers for loss calculations.
+The variables <cite>nu_ext</cite> and <cite>nu_dens</cite> are used by the loss function during training.
+The initialization details are logged into the logfile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.prepare_dataset">
+<span class="sig-name descname"><span class="pre">prepare_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.prepare_dataset" title="Link to this definition"></a></dt>
+<dd><p>Prepare the dataset for training and validation.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This method loads the dataset from the specified datafile, computes normalization coefficients,
+and prepares training and validation datasets along with corresponding data loaders.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.run" title="Link to this definition"></a></dt>
+<dd><p>Execute the main trainer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.setup_csv_files">
+<span class="sig-name descname"><span class="pre">setup_csv_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.setup_csv_files" title="Link to this definition"></a></dt>
+<dd><p>Set up CSV files for logging training and validation metrics.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This method creates and initializes CSV files for logging training and validation metrics. 
+It opens the specified files, writes the header row, and then closes the files.</p>
+</dd>
+<dt># Files created:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><cite>lossfile</cite>: CSV file for training metrics.</dt><dd><ul>
+<li><p>Header: [‘Epoch’, ‘TotalLoss’, ‘ExtinctionLoss’, ‘DensityLoss’, ‘Time’]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>valfile</cite>: CSV file for validation metrics.</dt><dd><ul>
+<li><p>Header: [‘Epoch’, ‘TotalValLoss’, ‘ExtinctionValLoss’, ‘DensityValLoss’, ‘ValTime’, ‘TotalValTime’]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.setup_logfile">
+<span class="sig-name descname"><span class="pre">setup_logfile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.setup_logfile" title="Link to this definition"></a></dt>
+<dd><p>Set up the logfile for logging information during training.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This method initializes and configures the log file based on the configuration settings.
+It writes information about Python and PyTorch versions, CUDA devices (if available),
+the selected computing device, the specified datafile, and the expected storage location for maps.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MainTrainer.MainTrainer.train_network">
+<span class="sig-name descname"><span class="pre">train_network</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MainTrainer.MainTrainer.train_network" title="Link to this definition"></a></dt>
+<dd><p>Train the neural network.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This method trains the neural network using the specified training configuration.
+It iterates through the specified number of epochs, performing training steps on each minibatch.
+The training progress, losses, and validation performance are logged into the logfile.
+The trained model is saved to the output file every 10000 epochs and at the last step.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MainProgram.html" class="btn btn-neutral float-left" title="MainProgram module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ModelHelper.html" class="btn btn-neutral float-right" title="ModelHelper module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Arnaud Siebert.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetworkTrainer module &mdash; Neural Network for mapping interstellar medium  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ParallelProcessor module" href="ParallelProcessor.html" />
+    <link rel="prev" title="NetworkHelper module" href="NetworkHelper.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neural Network for mapping interstellar medium
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Neural Network for mapping interstellar medium</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CreateDataFile.html">CreateDataFile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomLossFunctions.html">CustomLossFunctions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dataset2D.html">Dataset2D module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionModel.html">ExtinctionModel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionNetwork.html">ExtinctionNetwork module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileHelper.html">FileHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainProgram.html">MainProgram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainTrainer.html">MainTrainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelHelper.html">ModelHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelLoader.html">ModelLoader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkHelper.html">NetworkHelper module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NetworkTrainer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#NetworkTrainer.NetworkTrainer"><code class="docutils literal notranslate"><span class="pre">NetworkTrainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#NetworkTrainer.NetworkTrainer.take_step"><code class="docutils literal notranslate"><span class="pre">NetworkTrainer.take_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#NetworkTrainer.NetworkTrainer.validation"><code class="docutils literal notranslate"><span class="pre">NetworkTrainer.validation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ParallelProcessor.html">ParallelProcessor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Visualizer.html">Visualizer module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neural Network for mapping interstellar medium</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Neural Network for mapping interstellar medium</a></li>
+      <li class="breadcrumb-item active">NetworkTrainer module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/NetworkTrainer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-NetworkTrainer">
+<span id="networktrainer-module"></span><h1>NetworkTrainer module<a class="headerlink" href="#module-NetworkTrainer" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="NetworkTrainer.NetworkTrainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">NetworkTrainer.</span></span><span class="sig-name descname"><span class="pre">NetworkTrainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_loss_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_loss_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_reduction_method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_reduction_method</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NetworkTrainer.NetworkTrainer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for training the extinction neural network.</p>
+<dl>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>ext_loss_function (callable)</cite>: Loss function for extinction.</p></li>
+<li><p><cite>dens_loss_function (callable)</cite>: Loss function for density.</p></li>
+<li><p><cite>ext_reduction_method (str)</cite>: Method for reducing the extinction loss.</p></li>
+<li><p><cite>dens_reduction_method (str)</cite>: Method for reducing the density loss.</p></li>
+<li><p><cite>network (ExtinctionNetwork)</cite>: The extinction neural network.</p></li>
+<li><p><cite>device (str)</cite>: The device to be used for training (e.g. “cpu” or “cuda”).</p></li>
+<li><p><cite>opti (torch.optim)</cite>: The optimizer to be used for training.</p></li>
+</ul>
+</dd>
+<dt># Attributes:</dt><dd><ul class="simple">
+<li><p><cite>ext_loss_function (callable)</cite>: Loss function for extinction.</p></li>
+<li><p><cite>dens_loss_function (callable)</cite>: Loss function for density.</p></li>
+<li><p><cite>ext_reduction_method (str)</cite>: Method for reducing the extinction loss.</p></li>
+<li><p><cite>dens_reduction_method (str)</cite>: Method for reducing the density loss.</p></li>
+<li><p><cite>network (ExtinctionNetwork)</cite>: The extinction neural network.</p></li>
+<li><p><cite>device (str)</cite>: The device to be used for training (e.g. “cpu” or “cuda”).</p></li>
+<li><p><cite>opti (torch.optim)</cite>: The optimizer to be used for training.</p></li>
+</ul>
+</dd>
+<dt># Methods:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">`</span></a>take_step(in_batch, tar_batch, loss_ext_total, loss_dens_total, nu_ext,</dt><dd><p>nu_dens)`: Performs one training step.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a href="#id3"><span class="problematic" id="id4">`</span></a>validation(in_batch_validation_set, tar_batch_validation_set, nu_ext, nu_dens, val_ext_total,</dt><dd><p>val_dens_total)`: Performs one validation step.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt># Example:</dt><dd><p>The following example demonstrates how to use the <cite>NetworkTrainer</cite> class to train the extinction neural network.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">trainer</span> <span class="o">=</span> <span class="n">NetworkTrainer</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">opti</span><span class="p">,</span> <span class="n">ext_loss_function</span><span class="p">,</span> <span class="n">dens_loss_function</span><span class="p">,</span> <span class="n">ext_reduction_method</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                         <span class="n">dens_reduction_method</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trainer</span><span class="o">.</span><span class="n">take_step</span><span class="p">(</span><span class="n">in_batch</span><span class="p">,</span> <span class="n">tar_batch</span><span class="p">,</span> <span class="n">loss_ext_total</span><span class="p">,</span> <span class="n">loss_dens_total</span><span class="p">,</span> <span class="n">nu_ext</span><span class="p">,</span> <span class="n">nu_dens</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">trainer</span><span class="o">.</span><span class="n">validation</span><span class="p">(</span><span class="n">in_batch_validation_set</span><span class="p">,</span> <span class="n">tar_batch_validation_set</span><span class="p">,</span> <span class="n">nu_ext</span><span class="p">,</span> <span class="n">nu_dens</span><span class="p">,</span> <span class="n">val_ext_total</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                    <span class="n">val_dens_total</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="NetworkTrainer.NetworkTrainer.take_step">
+<span class="sig-name descname"><span class="pre">take_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tar_batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_ext_total</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_dens_total</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu_ext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu_dens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NetworkTrainer.NetworkTrainer.take_step" title="Link to this definition"></a></dt>
+<dd><p>Function to perform one training step.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This function executes one training step for the neural network.
+It updates the network’s parameters based on the provided input (in_batch) and target (tar_batch) batches.</p>
+</dd>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>in_batch (torch.Tensor)</cite>: Input batch for the neural network.</p></li>
+<li><p><cite>tar_batch (torch.Tensor)</cite>: Target batch for the neural network.</p></li>
+<li><p><cite>loss_ext_total (float)</cite>: Total loss for extinction.</p></li>
+<li><p><cite>loss_dens_total (float)</cite>: Total loss for density.</p></li>
+<li><p><cite>nu_ext (float)</cite>: Lagrange multiplier for extinction loss calculation.</p></li>
+<li><p><cite>nu_dens (float)</cite>: Lagrange multiplier for density loss calculation.</p></li>
+</ul>
+</dd>
+<dt># Raises:</dt><dd><ul class="simple">
+<li><p><cite>RuntimeError</cite>: If the target batch has a different shape than expected.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>tuple[float, float]</cite>: Total loss for extinction, Total loss for density.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NetworkTrainer.NetworkTrainer.validation">
+<span class="sig-name descname"><span class="pre">validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_batch_validation_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tar_batch_validation_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu_ext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu_dens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_ext_total</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_dens_total</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NetworkTrainer.NetworkTrainer.validation" title="Link to this definition"></a></dt>
+<dd><p>Function to perform one validation step.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This function executes one validation step for the neural network.
+It evaluates the network’s performance on the validation set based on the provided input
+(in_batch_validation_set) and target (tar_batch_validation_set) batches.</p>
+</dd>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>in_batch_validation_set (torch.Tensor)</cite>: Input batch for the validation set.</p></li>
+<li><p><cite>tar_batch_validation_set (torch.Tensor)</cite>: Target batch for the validation set.</p></li>
+<li><p><cite>nu_ext (float)</cite>: Lagrange multiplier for extinction loss calculation.</p></li>
+<li><p><cite>nu_dens (float)</cite>: Lagrange multiplier for density loss calculation.</p></li>
+<li><p><cite>val_ext_total (float)</cite>: Total loss for extinction in the validation set.</p></li>
+<li><p><cite>val_dens_total (float)</cite>: Total loss for density in the validation set.</p></li>
+</ul>
+</dd>
+<dt># Raises:</dt><dd><ul class="simple">
+<li><p><cite>RuntimeError</cite>: If the target batch has a different shape than expected.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><dl class="simple">
+<dt><cite>tuple[float, float]</cite>: Total loss for extinction in the validation set, Total loss for density in the</dt><dd><p>validation set.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NetworkHelper.html" class="btn btn-neutral float-left" title="NetworkHelper module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ParallelProcessor.html" class="btn btn-neutral float-right" title="ParallelProcessor module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Arnaud Siebert.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

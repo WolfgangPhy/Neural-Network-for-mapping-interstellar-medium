@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetworkHelper module &mdash; Neural Network for mapping interstellar medium  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NetworkTrainer module" href="NetworkTrainer.html" />
+    <link rel="prev" title="ModelLoader module" href="ModelLoader.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neural Network for mapping interstellar medium
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Neural Network for mapping interstellar medium</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CreateDataFile.html">CreateDataFile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomLossFunctions.html">CustomLossFunctions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dataset2D.html">Dataset2D module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionModel.html">ExtinctionModel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionNetwork.html">ExtinctionNetwork module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileHelper.html">FileHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainProgram.html">MainProgram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainTrainer.html">MainTrainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelHelper.html">ModelHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelLoader.html">ModelLoader module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NetworkHelper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#NetworkHelper.NetworkHelper"><code class="docutils literal notranslate"><span class="pre">NetworkHelper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#NetworkHelper.NetworkHelper.create_net_integ"><code class="docutils literal notranslate"><span class="pre">NetworkHelper.create_net_integ()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#NetworkHelper.NetworkHelper.init_weights"><code class="docutils literal notranslate"><span class="pre">NetworkHelper.init_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#NetworkHelper.NetworkHelper.integral"><code class="docutils literal notranslate"><span class="pre">NetworkHelper.integral()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkTrainer.html">NetworkTrainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParallelProcessor.html">ParallelProcessor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Visualizer.html">Visualizer module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neural Network for mapping interstellar medium</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Neural Network for mapping interstellar medium</a></li>
+      <li class="breadcrumb-item active">NetworkHelper module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/NetworkHelper.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-NetworkHelper">
+<span id="networkhelper-module"></span><h1>NetworkHelper module<a class="headerlink" href="#module-NetworkHelper" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="NetworkHelper.NetworkHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">NetworkHelper.</span></span><span class="sig-name descname"><span class="pre">NetworkHelper</span></span><a class="headerlink" href="#NetworkHelper.NetworkHelper" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A utility class for building and training neural networks for extinction and density estimation.</p>
+<dl>
+<dt># Methods:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><cite>integral(tensor, network_model, min_distance=0., debug=0)</cite>: Custom analytic integral of the network for</dt><dd><p>MSE loss. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><p><cite>init_weights(model)</cite>: Initializes weights and biases using Xavier uniform initialization. (Static)</p></li>
+<li><p><cite>create_net_integ(hidden_size)</cite>: Creates a neural network and sets up the optimizer. (Static)</p></li>
+</ul>
+</dd>
+<dt># Example:</dt><dd><p>The following example demonstrates how to use the <cite>NetworkHelper</cite> class to build and intit network weights.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">network</span><span class="p">,</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">NetworkHelper</span><span class="o">.</span><span class="n">create_net_integ</span><span class="p">(</span><span class="n">hidden_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                                   <span class="n">is_new_network</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">epoch_number</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                                   <span class="n">config_file_path</span><span class="o">=</span><span class="n">config_file_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">NetworkHelper</span><span class="o">.</span><span class="n">init_weights</span><span class="p">(</span><span class="n">network</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="NetworkHelper.NetworkHelper.create_net_integ">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_net_integ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_new_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NetworkHelper.NetworkHelper.create_net_integ" title="Link to this definition"></a></dt>
+<dd><p>Function to create the neural network and set the optimizer.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This function creates an instance of the <cite>ExtinctionNetwork</cite> neural network with the specified
+hidden size and initializes an Adam optimizer with the given learning rate.</p>
+</dd>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>hidden_size (int)</cite>: Size of the hidden layer in the neural network.</p></li>
+<li><p><cite>device (torch.device)</cite>: The device (CPU or GPU) on which the model is to be trained.</p></li>
+<li><p><cite>learning_rate (float)</cite>: The learning rate for the Adam optimizer.</p></li>
+<li><p><cite>is_new_network (bool)</cite>: Flag indicating whether to create a new network or load an existing one.</p></li>
+<li><p><cite>epoch_number (int)</cite>: The epoch number for which the network is being created.</p></li>
+<li><p><cite>config_file_path (str)</cite>: The path to the configuration file.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><dl class="simple">
+<dt><cite>tuple[ExtinctionNetwork, optim.Adam]</cite>: A tuple containing the created neural network and</dt><dd><p>the Adam optimizer.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NetworkHelper.NetworkHelper.init_weights">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NetworkHelper.NetworkHelper.init_weights" title="Link to this definition"></a></dt>
+<dd><p>Function to initialize weights and biases for the given PyTorch model.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This function initializes the weights and biases of the linear layers in the model
+using Xavier (Glorot) uniform initialization for weights and sets bias values to 0.1.</p>
+</dd>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>model (torch.nn.Module)</cite>: The PyTorch model for which weights and biases need to be initialized.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="NetworkHelper.NetworkHelper.integral">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">integral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NetworkHelper.NetworkHelper.integral" title="Link to this definition"></a></dt>
+<dd><p>Custom analytic integral of the network <cite>ExtinctionNetwork</cite> to be used in MSE loss.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This function calculates a custom analytic integral of the network <cite>ExtinctionNetwork</cite>,
+as specified in the Equation 15a and Equation 15b of Lloyd et al. 2020,
+to be used in Mean Squared Error (MSE) loss during training.</p>
+</dd>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>tensor (torch.Tensor)</cite>: Input tensor of size (batch_size, 3).</p></li>
+<li><p><cite>network_model (ExtinctionNetwork)</cite>: The neural network model used for the integration.</p></li>
+<li><p><cite>min_distance (float, optional)</cite>: Minimum value for integration. Defaults to 0.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>torch.tensor</cite>: Result of the custom analytic integral for each sample in the batch.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ModelLoader.html" class="btn btn-neutral float-left" title="ModelLoader module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NetworkTrainer.html" class="btn btn-neutral float-right" title="NetworkTrainer module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Arnaud Siebert.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
