@@ -1,0 +1,2 @@
+# Feasibility study of a neural network approach for mapping the distribution of the interstellar medium
+ The aim of this project is to test the ability of a perceptron or multi-layer perceptron neural network to invert a linear Volterra equation of the first kind which is the equation that relates the absorption density  to the total density along lines of sight to astronomical objects. This inversion process is well known to be ill-conditioned as measurement errors can lead to unphysical results such as negative densities. 
