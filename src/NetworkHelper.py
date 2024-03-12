@@ -1,3 +1,4 @@
+import sys
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -131,9 +132,16 @@ class NetworkHelper:
             network = ExtinctionNetwork(hidden_size)
         else:
             network_file = FileHelper.give_config_value(config_file_path, "outfile") + f"_e{epoch_number}.pt"
-            checkpoint = torch.load(network_file, map_location='cpu')
-            network = ExtinctionNetwork(hidden_size)
-            network.load_state_dict(checkpoint['integ_state_dict'])
-            network.eval()
-            network.to(device)
+            try:
+                checkpoint = torch.load(network_file, map_location='cpu')
+                network = ExtinctionNetwork(hidden_size)
+                network.load_state_dict(checkpoint['integ_state_dict'])
+                network.eval()
+                network.to(device)
+            except FileNotFoundError as e:
+                print(e)
+                print(f"The network does not exist. Be careful to the 'is_new_network' flag.")
+                print("Maybe you have to set it to false without training the network before.\n Run the program again.")
+                sys.exit()
+            
         return network, optim.Adam(network.parameters(), lr=learning_rate)
