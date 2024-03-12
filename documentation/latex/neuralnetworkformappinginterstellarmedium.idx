@@ -1,0 +1,98 @@
+\indexentry{module@\spxentry{module}!Calculator@\spxentry{Calculator}|hyperpage}{1}
+\indexentry{Calculator@\spxentry{Calculator}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{Calculator (class in Calculator)@\spxentry{Calculator}\spxextra{class in Calculator}|hyperpage}{1}
+\indexentry{compute\_density\_grid() (Calculator.Calculator method)@\spxentry{compute\_density\_grid()}\spxextra{Calculator.Calculator method}|hyperpage}{2}
+\indexentry{compute\_density\_sight() (Calculator.Calculator method)@\spxentry{compute\_density\_sight()}\spxextra{Calculator.Calculator method}|hyperpage}{2}
+\indexentry{compute\_extinction\_grid() (Calculator.Calculator method)@\spxentry{compute\_extinction\_grid()}\spxextra{Calculator.Calculator method}|hyperpage}{2}
+\indexentry{compute\_extinction\_sight() (Calculator.Calculator method)@\spxentry{compute\_extinction\_sight()}\spxextra{Calculator.Calculator method}|hyperpage}{3}
+\indexentry{module@\spxentry{module}!CreateDataFile@\spxentry{CreateDataFile}|hyperpage}{3}
+\indexentry{CreateDataFile@\spxentry{CreateDataFile}!module@\spxentry{module}|hyperpage}{3}
+\indexentry{CreateDataFile (class in CreateDataFile)@\spxentry{CreateDataFile}\spxextra{class in CreateDataFile}|hyperpage}{3}
+\indexentry{execute() (CreateDataFile.CreateDataFile method)@\spxentry{execute()}\spxextra{CreateDataFile.CreateDataFile method}|hyperpage}{3}
+\indexentry{module@\spxentry{module}!CustomLossFunctions@\spxentry{CustomLossFunctions}|hyperpage}{4}
+\indexentry{CustomLossFunctions@\spxentry{CustomLossFunctions}!module@\spxentry{module}|hyperpage}{4}
+\indexentry{CustomLossFunctions (class in CustomLossFunctions)@\spxentry{CustomLossFunctions}\spxextra{class in CustomLossFunctions}|hyperpage}{4}
+\indexentry{loglike\_loss() (CustomLossFunctions.CustomLossFunctions static method)@\spxentry{loglike\_loss()}\spxextra{CustomLossFunctions.CustomLossFunctions static method}|hyperpage}{4}
+\indexentry{module@\spxentry{module}!Dataset2D@\spxentry{Dataset2D}|hyperpage}{4}
+\indexentry{Dataset2D@\spxentry{Dataset2D}!module@\spxentry{module}|hyperpage}{4}
+\indexentry{Dataset2D (class in Dataset2D)@\spxentry{Dataset2D}\spxextra{class in Dataset2D}|hyperpage}{4}
+\indexentry{module@\spxentry{module}!ExtinctionModel@\spxentry{ExtinctionModel}|hyperpage}{5}
+\indexentry{ExtinctionModel@\spxentry{ExtinctionModel}!module@\spxentry{module}|hyperpage}{5}
+\indexentry{ExtinctionModel (class in ExtinctionModel)@\spxentry{ExtinctionModel}\spxextra{class in ExtinctionModel}|hyperpage}{5}
+\indexentry{module@\spxentry{module}!ExtinctionNetwork@\spxentry{ExtinctionNetwork}|hyperpage}{6}
+\indexentry{ExtinctionNetwork@\spxentry{ExtinctionNetwork}!module@\spxentry{module}|hyperpage}{6}
+\indexentry{ExtinctionNetwork (class in ExtinctionNetwork)@\spxentry{ExtinctionNetwork}\spxextra{class in ExtinctionNetwork}|hyperpage}{6}
+\indexentry{forward() (ExtinctionNetwork.ExtinctionNetwork method)@\spxentry{forward()}\spxextra{ExtinctionNetwork.ExtinctionNetwork method}|hyperpage}{6}
+\indexentry{module@\spxentry{module}!FileHelper@\spxentry{FileHelper}|hyperpage}{7}
+\indexentry{FileHelper@\spxentry{FileHelper}!module@\spxentry{module}|hyperpage}{7}
+\indexentry{FileHelper (class in FileHelper)@\spxentry{FileHelper}\spxextra{class in FileHelper}|hyperpage}{7}
+\indexentry{give\_config\_value() (FileHelper.FileHelper static method)@\spxentry{give\_config\_value()}\spxextra{FileHelper.FileHelper static method}|hyperpage}{7}
+\indexentry{init\_test\_directory() (FileHelper.FileHelper static method)@\spxentry{init\_test\_directory()}\spxextra{FileHelper.FileHelper static method}|hyperpage}{7}
+\indexentry{module@\spxentry{module}!MainProgram@\spxentry{MainProgram}|hyperpage}{7}
+\indexentry{MainProgram@\spxentry{MainProgram}!module@\spxentry{module}|hyperpage}{7}
+\indexentry{MainProgram (class in MainProgram)@\spxentry{MainProgram}\spxextra{class in MainProgram}|hyperpage}{7}
+\indexentry{calculate\_density\_extinction() (MainProgram.MainProgram method)@\spxentry{calculate\_density\_extinction()}\spxextra{MainProgram.MainProgram method}|hyperpage}{8}
+\indexentry{check\_and\_assign\_loss\_function() (MainProgram.MainProgram method)@\spxentry{check\_and\_assign\_loss\_function()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{create\_data\_file() (MainProgram.MainProgram method)@\spxentry{create\_data\_file()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{execute() (MainProgram.MainProgram method)@\spxentry{execute()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{get\_max\_distance() (MainProgram.MainProgram method)@\spxentry{get\_max\_distance()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{get\_parameters\_from\_json() (MainProgram.MainProgram method)@\spxentry{get\_parameters\_from\_json()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{load\_dataset() (MainProgram.MainProgram method)@\spxentry{load\_dataset()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{set\_hidden\_size() (MainProgram.MainProgram method)@\spxentry{set\_hidden\_size()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{set\_model() (MainProgram.MainProgram method)@\spxentry{set\_model()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{set\_parameters() (MainProgram.MainProgram method)@\spxentry{set\_parameters()}\spxextra{MainProgram.MainProgram method}|hyperpage}{9}
+\indexentry{train() (MainProgram.MainProgram method)@\spxentry{train()}\spxextra{MainProgram.MainProgram method}|hyperpage}{10}
+\indexentry{visualize() (MainProgram.MainProgram method)@\spxentry{visualize()}\spxextra{MainProgram.MainProgram method}|hyperpage}{10}
+\indexentry{module@\spxentry{module}!MainTrainer@\spxentry{MainTrainer}|hyperpage}{10}
+\indexentry{MainTrainer@\spxentry{MainTrainer}!module@\spxentry{module}|hyperpage}{10}
+\indexentry{MainTrainer (class in MainTrainer)@\spxentry{MainTrainer}\spxextra{class in MainTrainer}|hyperpage}{10}
+\indexentry{create\_network() (MainTrainer.MainTrainer method)@\spxentry{create\_network()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{12}
+\indexentry{init\_files\_path() (MainTrainer.MainTrainer method)@\spxentry{init\_files\_path()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{12}
+\indexentry{init\_training() (MainTrainer.MainTrainer method)@\spxentry{init\_training()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{12}
+\indexentry{prepare\_dataset() (MainTrainer.MainTrainer method)@\spxentry{prepare\_dataset()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{12}
+\indexentry{run() (MainTrainer.MainTrainer method)@\spxentry{run()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{12}
+\indexentry{setup\_csv\_files() (MainTrainer.MainTrainer method)@\spxentry{setup\_csv\_files()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{12}
+\indexentry{setup\_logfile() (MainTrainer.MainTrainer method)@\spxentry{setup\_logfile()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{13}
+\indexentry{train\_network() (MainTrainer.MainTrainer method)@\spxentry{train\_network()}\spxextra{MainTrainer.MainTrainer method}|hyperpage}{13}
+\indexentry{module@\spxentry{module}!ModelHelper@\spxentry{ModelHelper}|hyperpage}{13}
+\indexentry{ModelHelper@\spxentry{ModelHelper}!module@\spxentry{module}|hyperpage}{13}
+\indexentry{ModelHelper (class in ModelHelper)@\spxentry{ModelHelper}\spxextra{class in ModelHelper}|hyperpage}{13}
+\indexentry{compute\_extinction\_model\_density() (ModelHelper.ModelHelper static method)@\spxentry{compute\_extinction\_model\_density()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{14}
+\indexentry{convert\_cartesian\_to\_galactic\_2D() (ModelHelper.ModelHelper static method)@\spxentry{convert\_cartesian\_to\_galactic\_2D()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{14}
+\indexentry{convert\_cartesian\_to\_galactic\_3D() (ModelHelper.ModelHelper static method)@\spxentry{convert\_cartesian\_to\_galactic\_3D()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{14}
+\indexentry{convert\_galactic\_to\_cartesian\_2D() (ModelHelper.ModelHelper static method)@\spxentry{convert\_galactic\_to\_cartesian\_2D()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{14}
+\indexentry{convert\_galactic\_to\_cartesian\_3D() (ModelHelper.ModelHelper static method)@\spxentry{convert\_galactic\_to\_cartesian\_3D()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{14}
+\indexentry{gauss3d() (ModelHelper.ModelHelper static method)@\spxentry{gauss3d()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{15}
+\indexentry{integ\_d() (ModelHelper.ModelHelper static method)@\spxentry{integ\_d()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{15}
+\indexentry{integ\_d\_async() (ModelHelper.ModelHelper static method)@\spxentry{integ\_d\_async()}\spxextra{ModelHelper.ModelHelper static method}|hyperpage}{15}
+\indexentry{module@\spxentry{module}!ModelLoader@\spxentry{ModelLoader}|hyperpage}{16}
+\indexentry{ModelLoader@\spxentry{ModelLoader}!module@\spxentry{module}|hyperpage}{16}
+\indexentry{ModelLoader (class in ModelLoader)@\spxentry{ModelLoader}\spxextra{class in ModelLoader}|hyperpage}{16}
+\indexentry{check\_existing\_model() (ModelLoader.ModelLoader method)@\spxentry{check\_existing\_model()}\spxextra{ModelLoader.ModelLoader method}|hyperpage}{16}
+\indexentry{create\_new\_model() (ModelLoader.ModelLoader method)@\spxentry{create\_new\_model()}\spxextra{ModelLoader.ModelLoader method}|hyperpage}{17}
+\indexentry{load\_model() (ModelLoader.ModelLoader method)@\spxentry{load\_model()}\spxextra{ModelLoader.ModelLoader method}|hyperpage}{17}
+\indexentry{module@\spxentry{module}!NetworkHelper@\spxentry{NetworkHelper}|hyperpage}{17}
+\indexentry{NetworkHelper@\spxentry{NetworkHelper}!module@\spxentry{module}|hyperpage}{17}
+\indexentry{NetworkHelper (class in NetworkHelper)@\spxentry{NetworkHelper}\spxextra{class in NetworkHelper}|hyperpage}{17}
+\indexentry{create\_net\_integ() (NetworkHelper.NetworkHelper static method)@\spxentry{create\_net\_integ()}\spxextra{NetworkHelper.NetworkHelper static method}|hyperpage}{17}
+\indexentry{init\_weights() (NetworkHelper.NetworkHelper static method)@\spxentry{init\_weights()}\spxextra{NetworkHelper.NetworkHelper static method}|hyperpage}{18}
+\indexentry{integral() (NetworkHelper.NetworkHelper static method)@\spxentry{integral()}\spxextra{NetworkHelper.NetworkHelper static method}|hyperpage}{18}
+\indexentry{module@\spxentry{module}!NetworkTrainer@\spxentry{NetworkTrainer}|hyperpage}{18}
+\indexentry{NetworkTrainer@\spxentry{NetworkTrainer}!module@\spxentry{module}|hyperpage}{18}
+\indexentry{NetworkTrainer (class in NetworkTrainer)@\spxentry{NetworkTrainer}\spxextra{class in NetworkTrainer}|hyperpage}{18}
+\indexentry{take\_step() (NetworkTrainer.NetworkTrainer method)@\spxentry{take\_step()}\spxextra{NetworkTrainer.NetworkTrainer method}|hyperpage}{19}
+\indexentry{validation() (NetworkTrainer.NetworkTrainer method)@\spxentry{validation()}\spxextra{NetworkTrainer.NetworkTrainer method}|hyperpage}{19}
+\indexentry{module@\spxentry{module}!ParallelProcessor@\spxentry{ParallelProcessor}|hyperpage}{20}
+\indexentry{ParallelProcessor@\spxentry{ParallelProcessor}!module@\spxentry{module}|hyperpage}{20}
+\indexentry{ParallelProcessor (class in ParallelProcessor)@\spxentry{ParallelProcessor}\spxextra{class in ParallelProcessor}|hyperpage}{20}
+\indexentry{process\_parallel() (ParallelProcessor.ParallelProcessor static method)@\spxentry{process\_parallel()}\spxextra{ParallelProcessor.ParallelProcessor static method}|hyperpage}{20}
+\indexentry{module@\spxentry{module}!Visualizer@\spxentry{Visualizer}|hyperpage}{21}
+\indexentry{Visualizer@\spxentry{Visualizer}!module@\spxentry{module}|hyperpage}{21}
+\indexentry{Visualizer (class in Visualizer)@\spxentry{Visualizer}\spxextra{class in Visualizer}|hyperpage}{21}
+\indexentry{compare\_densities() (Visualizer.Visualizer method)@\spxentry{compare\_densities()}\spxextra{Visualizer.Visualizer method}|hyperpage}{22}
+\indexentry{compare\_extinctions() (Visualizer.Visualizer method)@\spxentry{compare\_extinctions()}\spxextra{Visualizer.Visualizer method}|hyperpage}{22}
+\indexentry{density\_vs\_distance() (Visualizer.Visualizer method)@\spxentry{density\_vs\_distance()}\spxextra{Visualizer.Visualizer method}|hyperpage}{22}
+\indexentry{extinction\_vs\_distance() (Visualizer.Visualizer method)@\spxentry{extinction\_vs\_distance()}\spxextra{Visualizer.Visualizer method}|hyperpage}{22}
+\indexentry{load\_datas() (Visualizer.Visualizer method)@\spxentry{load\_datas()}\spxextra{Visualizer.Visualizer method}|hyperpage}{22}
+\indexentry{loss\_function() (Visualizer.Visualizer method)@\spxentry{loss\_function()}\spxextra{Visualizer.Visualizer method}|hyperpage}{22}
+\indexentry{plot\_model() (Visualizer.Visualizer method)@\spxentry{plot\_model()}\spxextra{Visualizer.Visualizer method}|hyperpage}{22}

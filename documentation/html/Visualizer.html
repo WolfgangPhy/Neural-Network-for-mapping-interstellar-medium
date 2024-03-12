@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualizer module &mdash; Neural Network for mapping interstellar medium  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="ParallelProcessor module" href="ParallelProcessor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neural Network for mapping interstellar medium
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Feasibility-study-of-a-neural-network-approach-for-mapping-the-distribution-of-the-interstellar-medium</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Calculator.html">Calculator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CreateDataFile.html">CreateDataFile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomLossFunctions.html">CustomLossFunctions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dataset2D.html">Dataset2D module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionModel.html">ExtinctionModel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionNetwork.html">ExtinctionNetwork module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileHelper.html">FileHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainProgram.html">MainProgram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainTrainer.html">MainTrainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelHelper.html">ModelHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelLoader.html">ModelLoader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkHelper.html">NetworkHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkTrainer.html">NetworkTrainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParallelProcessor.html">ParallelProcessor module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Visualizer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Visualizer.Visualizer"><code class="docutils literal notranslate"><span class="pre">Visualizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Visualizer.Visualizer.compare_densities"><code class="docutils literal notranslate"><span class="pre">Visualizer.compare_densities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Visualizer.Visualizer.compare_extinctions"><code class="docutils literal notranslate"><span class="pre">Visualizer.compare_extinctions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Visualizer.Visualizer.density_vs_distance"><code class="docutils literal notranslate"><span class="pre">Visualizer.density_vs_distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Visualizer.Visualizer.extinction_vs_distance"><code class="docutils literal notranslate"><span class="pre">Visualizer.extinction_vs_distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Visualizer.Visualizer.load_datas"><code class="docutils literal notranslate"><span class="pre">Visualizer.load_datas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Visualizer.Visualizer.loss_function"><code class="docutils literal notranslate"><span class="pre">Visualizer.loss_function()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Visualizer.Visualizer.plot_model"><code class="docutils literal notranslate"><span class="pre">Visualizer.plot_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neural Network for mapping interstellar medium</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Feasibility-study-of-a-neural-network-approach-for-mapping-the-distribution-of-the-interstellar-medium</a></li>
+      <li class="breadcrumb-item active">Visualizer module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Visualizer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Visualizer">
+<span id="visualizer-module"></span><h1>Visualizer module<a class="headerlink" href="#module-Visualizer" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Visualizer.Visualizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Visualizer.</span></span><span class="sig-name descname"><span class="pre">Visualizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class providing methods for visualizing extinction model predictions.</p>
+<dl>
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>config_file_path (str)</cite>: Name of the configuration file.</p></li>
+<li><p><cite>dataset (ExtinctionDataset)</cite>: Instance of the extinction dataset.</p></li>
+<li><p><cite>max_distance (float)</cite>: Maximum distance in the dataset.</p></li>
+</ul>
+</dd>
+<dt># Attributes:</dt><dd><ul class="simple">
+<li><p><cite>config_file_path (str)</cite>: Name of the configuration file.</p></li>
+<li><p><cite>ext_grid_filename (str)</cite>: Filename for the extinction grid data.</p></li>
+<li><p><cite>dens_grid_filename (str)</cite>: Filename for the density grid data.</p></li>
+<li><p><cite>ext_los_filename (str)</cite>: Filename for the extinction line-of-sight data.</p></li>
+<li><p><cite>dens_los_filename (str)</cite>: Filename for the density line-of-sight data.</p></li>
+<li><p><cite>dataset (ExtinctionDataset)</cite>: Instance of the extinction dataset.</p></li>
+<li><p><cite>max_distance (float)</cite>: Maximum distance in the dataset.</p></li>
+<li><p><cite>ext_grid_datas (dict)</cite>: Dictionary containing extinction grid data.</p></li>
+<li><p><cite>dens_grid_datas (dict)</cite>: Dictionary containing density grid data.</p></li>
+<li><p><cite>ext_sight_datas (dict)</cite>: Dictionary containing extinction line-of-sight data.</p></li>
+<li><p><cite>dens_sight_datas (dict)</cite>: Dictionary containing density line-of-sight data.</p></li>
+<li><p><cite>lossdatas (pd.DataFrame)</cite>: DataFrame containing training loss data.</p></li>
+<li><p><cite>valdatas (pd.DataFrame)</cite>: DataFrame containing validation loss data.</p></li>
+</ul>
+</dd>
+<dt># Methods:</dt><dd><ul class="simple">
+<li><p><cite>loss_function()</cite>: Plot the training and validation loss.</p></li>
+<li><p><cite>load_datas()</cite>: Load grid and line-of-sight data.</p></li>
+<li><p><cite>compare_densities()</cite>: Compare true and network density predictions.</p></li>
+<li><p><cite>compare_extinctions()</cite>: Compare true and network extinction predictions.</p></li>
+<li><p><cite>extinction_vs_distance()</cite>: Plot true and network extinction along lines of sight.</p></li>
+<li><p><cite>density_vs_distance()</cite>: Plot true and network density along lines of sight.</p></li>
+<li><p><cite>plot_model()</cite>: Plot the model and save the plot.</p></li>
+</ul>
+</dd>
+<dt># Example:</dt><dd><p>The following example demonstrates how to use the <cite>Visualizer</cite> class to compare true and network extinction.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">visualizer</span> <span class="o">=</span> <span class="n">Visualizer</span><span class="p">(</span><span class="s2">&quot;config.json&quot;</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="mf">20.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">visualizer</span><span class="o">.</span><span class="n">compare_extinctions</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Visualizer.Visualizer.compare_densities">
+<span class="sig-name descname"><span class="pre">compare_densities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer.compare_densities" title="Link to this definition"></a></dt>
+<dd><p>Compare true and network density predictions and save the plot in the ‘Plots’ subdirectory of the current
+test directory.</p>
+<dl class="simple">
+<dt># Plot Structure:</dt><dd><ul class="simple">
+<li><p>True density map.</p></li>
+<li><p>Network density map.</p></li>
+<li><p>True-Network density map.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Visualizer.Visualizer.compare_extinctions">
+<span class="sig-name descname"><span class="pre">compare_extinctions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer.compare_extinctions" title="Link to this definition"></a></dt>
+<dd><p>Compare true and network extinction predictions and save the plot in the Plots subdirectory
+of the current test directory.</p>
+<dl class="simple">
+<dt># Plot Structure:</dt><dd><ul class="simple">
+<li><p>True extinction map.</p></li>
+<li><p>Network extinction map.</p></li>
+<li><p>True-Network extinction map.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Visualizer.Visualizer.density_vs_distance">
+<span class="sig-name descname"><span class="pre">density_vs_distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer.density_vs_distance" title="Link to this definition"></a></dt>
+<dd><p>Plot true and network density along lines of sight.</p>
+<dl class="simple">
+<dt># Plot Structure:</dt><dd><p>The plot contains 8 subplots, each showing the true and network density along a line of sight.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Visualizer.Visualizer.extinction_vs_distance">
+<span class="sig-name descname"><span class="pre">extinction_vs_distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer.extinction_vs_distance" title="Link to this definition"></a></dt>
+<dd><p>Plot true and network extinction along lines of sight and save the plot in the ‘Plots’ subdirectory of the</p>
+<dl class="simple">
+<dt># Plot Structure:</dt><dd><p>The plot contains 8 subplots, each showing the true and network extinction along a line of sight.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Visualizer.Visualizer.load_datas">
+<span class="sig-name descname"><span class="pre">load_datas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer.load_datas" title="Link to this definition"></a></dt>
+<dd><p>Load grid and line-of-sight data.</p>
+<dl class="simple">
+<dt># Remarks:</dt><dd><p>This method loads the grid and line-of-sight data from the files specified in the configuration file.
+It checks if the files exist and loads the data if they do.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Visualizer.Visualizer.loss_function">
+<span class="sig-name descname"><span class="pre">loss_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer.loss_function" title="Link to this definition"></a></dt>
+<dd><p>Plot the training and validation loss and save the plot in the ‘Plots’ subdirectory of the current test directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Visualizer.Visualizer.plot_model">
+<span class="sig-name descname"><span class="pre">plot_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Visualizer.Visualizer.plot_model" title="Link to this definition"></a></dt>
+<dd><p>Plot the model (the dataset file) and save the plot in the ‘Plots’ subdirectory of the current test directory.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ParallelProcessor.html" class="btn btn-neutral float-left" title="ParallelProcessor module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Arnaud Siebert.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

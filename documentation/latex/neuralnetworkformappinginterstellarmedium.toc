@@ -1,0 +1,19 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Feasibility\sphinxhyphen {}study\sphinxhyphen {}of\sphinxhyphen {}a\sphinxhyphen {}neural\sphinxhyphen {}network\sphinxhyphen {}approach\sphinxhyphen {}for\sphinxhyphen {}mapping\sphinxhyphen {}the\sphinxhyphen {}distribution\sphinxhyphen {}of\sphinxhyphen {}the\sphinxhyphen {}interstellar\sphinxhyphen {}medium}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Calculator module}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}CreateDataFile module}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}CustomLossFunctions module}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Dataset2D module}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}ExtinctionModel module}{5}{section.1.5}%
+\contentsline {section}{\numberline {1.6}ExtinctionNetwork module}{6}{section.1.6}%
+\contentsline {section}{\numberline {1.7}FileHelper module}{7}{section.1.7}%
+\contentsline {section}{\numberline {1.8}MainProgram module}{7}{section.1.8}%
+\contentsline {section}{\numberline {1.9}MainTrainer module}{10}{section.1.9}%
+\contentsline {section}{\numberline {1.10}ModelHelper module}{13}{section.1.10}%
+\contentsline {section}{\numberline {1.11}ModelLoader module}{16}{section.1.11}%
+\contentsline {section}{\numberline {1.12}NetworkHelper module}{17}{section.1.12}%
+\contentsline {section}{\numberline {1.13}NetworkTrainer module}{18}{section.1.13}%
+\contentsline {section}{\numberline {1.14}ParallelProcessor module}{20}{section.1.14}%
+\contentsline {section}{\numberline {1.15}Visualizer module}{21}{section.1.15}%
+\contentsline {chapter}{\numberline {2}Indices and tables}{23}{chapter.2}%
+\contentsline {chapter}{Python Module Index}{25}{section*.71}%

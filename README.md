@@ -15,7 +15,7 @@ git clone https://github.com/WolfgangPhy/Neural-Network-for-mapping-interstellar
 ```
 # Documentation
 
-The documentation of the code is available in the `Documentation` directory. You can find it in two fomat, in pdf and html. The html format is more user friendly and you can navigate through the differents classes and methods easily. To use it open the `index.html` file in your web browser.
+The documentation of the code is available in the `Documentation` directory. You can find it in two fomat, in pdf (in the `latex` directory) and html. The html format is more user friendly and you can navigate through the differents classes and methods easily. To use it open the `index.html` file in your web browser.
 
 # How it works ?
 

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModelHelper module &mdash; Neural Network for mapping interstellar medium  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ModelLoader module" href="ModelLoader.html" />
+    <link rel="prev" title="MainTrainer module" href="MainTrainer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neural Network for mapping interstellar medium
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Feasibility-study-of-a-neural-network-approach-for-mapping-the-distribution-of-the-interstellar-medium</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Calculator.html">Calculator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CreateDataFile.html">CreateDataFile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CustomLossFunctions.html">CustomLossFunctions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dataset2D.html">Dataset2D module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionModel.html">ExtinctionModel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtinctionNetwork.html">ExtinctionNetwork module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FileHelper.html">FileHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainProgram.html">MainProgram module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MainTrainer.html">MainTrainer module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ModelHelper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ModelHelper.ModelHelper"><code class="docutils literal notranslate"><span class="pre">ModelHelper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.compute_extinction_model_density"><code class="docutils literal notranslate"><span class="pre">ModelHelper.compute_extinction_model_density()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.convert_cartesian_to_galactic_2D"><code class="docutils literal notranslate"><span class="pre">ModelHelper.convert_cartesian_to_galactic_2D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.convert_cartesian_to_galactic_3D"><code class="docutils literal notranslate"><span class="pre">ModelHelper.convert_cartesian_to_galactic_3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.convert_galactic_to_cartesian_2D"><code class="docutils literal notranslate"><span class="pre">ModelHelper.convert_galactic_to_cartesian_2D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.convert_galactic_to_cartesian_3D"><code class="docutils literal notranslate"><span class="pre">ModelHelper.convert_galactic_to_cartesian_3D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.gauss3d"><code class="docutils literal notranslate"><span class="pre">ModelHelper.gauss3d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.integ_d"><code class="docutils literal notranslate"><span class="pre">ModelHelper.integ_d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ModelHelper.ModelHelper.integ_d_async"><code class="docutils literal notranslate"><span class="pre">ModelHelper.integ_d_async()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ModelLoader.html">ModelLoader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkHelper.html">NetworkHelper module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetworkTrainer.html">NetworkTrainer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParallelProcessor.html">ParallelProcessor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Visualizer.html">Visualizer module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neural Network for mapping interstellar medium</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Feasibility-study-of-a-neural-network-approach-for-mapping-the-distribution-of-the-interstellar-medium</a></li>
+      <li class="breadcrumb-item active">ModelHelper module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ModelHelper.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ModelHelper">
+<span id="modelhelper-module"></span><h1>ModelHelper module<a class="headerlink" href="#module-ModelHelper" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ModelHelper.</span></span><span class="sig-name descname"><span class="pre">ModelHelper</span></span><a class="headerlink" href="#ModelHelper.ModelHelper" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Utility functions for coordinate change and integration.</p>
+<dl>
+<dt># Methods:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><cite>convert_galactic_to_cartesian_3D(ell, b, d)</cite>: Converts from galactic coordinates to</dt><dd><p>cartesian coordinates. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>convert_cartesian_to_galactic_3D(x, y, z)</cite>: Converts from cartesian coordinates to</dt><dd><p>galactic coordinates. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>convert_cartesian_to_galactic_2D(x, y)</cite>: Converts from cartesian coordinates to</dt><dd><p>galactic coordinates. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>convert_galactic_to_cartesian_2D(ell, d)</cite>: Converts from galactic coordinates to</dt><dd><p>cartesian coordinates. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>integ_d(func, ell, b, dmax, model, dd=0,01)</cite>: Integrates a function over a line of sight</dt><dd><p>in the galactic plane. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>integ_d_async(idx, func, ell, b, dmax, model, dd=0.01)</cite>: Integrates a function over a line of sight</dt><dd><p>in the galactic plane. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>gauss3d(x, y, z, x0, y0, z0, m_tot, s1, s2, s3, a1, a2)</cite>: Return the value of the density of a cloud</dt><dd><p>at a given point in the Galactic plane. (Static)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>compute_extinction_model_density(extinction_model, x, y, z)</cite>: Computes the density of the model</dt><dd><p>at a given point in the Galactic plane. (Static)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt># Examples:</dt><dd><p>The following example shows how to convert from galactic coordinates to cartesian coordinates.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">ModelHelper</span><span class="o">.</span><span class="n">convert_galactic_to_cartesian_3D</span><span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following example shows how to compute the density of the model at a given point in the Galactic plane.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">density</span> <span class="o">=</span> <span class="n">ModelHelper</span><span class="o">.</span><span class="n">compute_extinction_model_density</span><span class="p">(</span><span class="n">extinction_model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.compute_extinction_model_density">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compute_extinction_model_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exctinction_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.compute_extinction_model_density" title="Link to this definition"></a></dt>
+<dd><p>Computes the density of the model at a given point in the Galactic plane.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>extinction_model (ExctinctionModel)</cite>: Model to use.</p></li>
+<li><p><cite>x (float)</cite>: x coordinate in kpc.</p></li>
+<li><p><cite>y (float)</cite>: y coordinate in kpc.</p></li>
+<li><p><cite>z (float)</cite>: z coordinate in kpc.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>float</cite> : Value of the density.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.convert_cartesian_to_galactic_2D">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_cartesian_to_galactic_2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.convert_cartesian_to_galactic_2D" title="Link to this definition"></a></dt>
+<dd><p>Converts from cartesian coordinates to galactic coordinates.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>x (float)</cite>: x coordinate in kpc.</p></li>
+<li><p><cite>y (float)</cite>: y coordinate in kpc.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>tuple[float, float]</cite>: Galactic coordinates (ell,d) in degrees and kpc.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.convert_cartesian_to_galactic_3D">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_cartesian_to_galactic_3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.convert_cartesian_to_galactic_3D" title="Link to this definition"></a></dt>
+<dd><p>Converts from cartesian coordinates to galactic coordinates.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>x (float)</cite>: x coordinate in kpc.</p></li>
+<li><p><cite>y (float)</cite>: y coordinate in kpc.</p></li>
+<li><p><cite>z (float)</cite>: z coordinate in kpc.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>tuple[float, float, float]</cite>: Galactic coordinates (ell, b, d) in degrees and kpc.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.convert_galactic_to_cartesian_2D">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_galactic_to_cartesian_2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.convert_galactic_to_cartesian_2D" title="Link to this definition"></a></dt>
+<dd><p>Converts from galactic coordinates to cartesian coordinates.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>ell (float)</cite>: Galactic longitude in degrees (0 to 360).</p></li>
+<li><p><cite>d (float)</cite>: Distance in kpc.</p></li>
+</ul>
+</dd>
+<dt>“ Returns:</dt><dd><p><cite>tuple[float, float]</cite>: Cartesian coordinates (x,y) in kpc.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.convert_galactic_to_cartesian_3D">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_galactic_to_cartesian_3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.convert_galactic_to_cartesian_3D" title="Link to this definition"></a></dt>
+<dd><p>Converts from galactic coordinates to cartesian coordinates.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>ell (float)</cite>: Galactic longitude in degrees (0 to 360).</p></li>
+<li><p><cite>b (float)</cite>: Galactic latitude in degrees (-90 to 90).</p></li>
+<li><p><cite>d (float)</cite>: Distance in kpc.</p></li>
+</ul>
+</dd>
+<dt>“ Returns:</dt><dd><p><cite>tuple[float, float, float]</cite> : Cartesian coordinates (x, y, z) in kpc.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.gauss3d">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gauss3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_tot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.gauss3d" title="Link to this definition"></a></dt>
+<dd><p>Return the value of the density of a cloud at a given point in the Galactic plane.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>x (float)</cite>: x coordinate in kpc.</p></li>
+<li><p><cite>y (float)</cite>: y coordinate in kpc.</p></li>
+<li><p><cite>z (float)</cite>: z coordinate in kpc.</p></li>
+<li><p><cite>x0 (float)</cite>: x coordinate of the center in kpc.</p></li>
+<li><p><cite>y0 (float)</cite>: y coordinate of the center in kpc.</p></li>
+<li><p><cite>z0 (float)</cite>: z coordinate of the center in kpc.</p></li>
+<li><p><cite>m_tot (float)</cite>: Total mass of the cloud.</p></li>
+<li><p><cite>s1 (float)</cite>: Size along x axis in kpc.</p></li>
+<li><p><cite>s2 (float)</cite>: Size along y axis in kpc.</p></li>
+<li><p><cite>s3 (float)</cite>: Size along z axis in kpc.</p></li>
+<li><p><cite>a1 (float)</cite>: Rotation angle around x axis in degrees.</p></li>
+<li><p><cite>a2 (float)</cite>: Rotation angle around z axis in degrees.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>float</cite> : Value of the density of the cloud at the given point.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.integ_d">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">integ_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.integ_d" title="Link to this definition"></a></dt>
+<dd><p>Integrates a function f over a line of sight in the galactic plane.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>func (callable)</cite>: Function to integrate.</p></li>
+<li><p><cite>ell (float)</cite>: Galactic longitude in degrees (0 to 360).</p></li>
+<li><p><cite>b (float)</cite>: Galactic latitude in degrees (-90 to 90).</p></li>
+<li><p><cite>dmax (float)</cite>: Maximum distance in kpc.</p></li>
+<li><p><cite>model (extmy_model)</cite>: Model to use.</p></li>
+<li><p><cite>dd (float, optional)</cite>: Step size in kpc. Defaults to 0.01.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>float</cite>: Value of the integral.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ModelHelper.ModelHelper.integ_d_async">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">integ_d_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ModelHelper.ModelHelper.integ_d_async" title="Link to this definition"></a></dt>
+<dd><p>Integrates a function f over a line of sight in the galactic plane.</p>
+<dl class="simple">
+<dt># Args:</dt><dd><ul class="simple">
+<li><p><cite>idx (int)</cite>: Index of the integral.</p></li>
+<li><p><cite>func (callable)</cite>: Function to integrate.</p></li>
+<li><p><cite>ell (float)</cite>: Galactic longitude in degrees (0 to 360).</p></li>
+<li><p><cite>b (float)</cite>: Galactic latitude in degrees (-90 to 90).</p></li>
+<li><p><cite>dmax (float)</cite>: Maximum distance in kpc.</p></li>
+<li><p><cite>model (extmy_model)</cite>: Model to use.</p></li>
+<li><p><cite>dd (float, optional)</cite>: Step size in kpc. Defaults to 0.01.</p></li>
+</ul>
+</dd>
+<dt># Returns:</dt><dd><p><cite>tuple[int, float]</cite>: Index and value of the integral.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MainTrainer.html" class="btn btn-neutral float-left" title="MainTrainer module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ModelLoader.html" class="btn btn-neutral float-right" title="ModelLoader module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Arnaud Siebert.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
